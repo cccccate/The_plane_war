@@ -43,5 +43,20 @@ set_mode(resolution(0,0),flags=0,depth=0) # 缺省参数（已有默认值，调
 while True:
   pass
 ```
+### 5 绘制图像  
+要将图像加载到内存并显示在屏幕上，需要：  
+1 pygame.image.load（）加载图像的数据  
+2 使用步骤3中创建的游戏屏幕对象，调用blit方法将图像绘制到指定位置  
+3 pygame.display.update()更新整个屏幕  
+[绘制背景图像](cate_04_background.py)  
+[绘制英雄](cate_05_addhero.py)  
+注意：可以在所有绘制工作完成之后，同意调用update方法  
+### 6 游戏中的动画实现原理  
+每次调用update产生的效果称为一个帧frame，一般在电脑上每秒60帧就能产生连续高品质的动画效果  
+因此，每秒钟调用60次update  
+### 游戏时钟  
+
+
+
 
 
