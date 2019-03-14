@@ -70,7 +70,9 @@ while True:
 监听：捕获到用户的操作并有针对性的做出响应  
 pygame中通过pygame.event.get()可以获得用户当前所做的动作列表  
 [监听事件](cate_09_event.py)   
-！[运行结果](a.png)  
+![运行结果](a.png)  
+[监听退出事件](cate_10_quit.py)
+
 
 
 
