@@ -71,7 +71,34 @@ while True:
 pygame中通过pygame.event.get()可以获得用户当前所做的动作列表  
 [监听事件](cate_09_event.py)   
 ![运行结果](a.png)  
-[监听退出事件](cate_10_quit.py)
+[监听退出事件](cate_10_quit.py)  
+注意：如果监听到退出的动作时，先调用pygame.quit()卸载pygame的所有模块，再调用exit（）直接终止当前正在执行的程序  
+
+### 精灵和精灵组  
+在以上的案例中，加载图象，位置变化，绘制图象都过于繁琐  
+精灵：存储图像数据和位置rect的对象  
+精灵属性：image（记录图象数据），rect（记录在屏幕上的位置）  
+精灵方法：
+```
+update(*args)：更新精灵位置  
+kill()：从所有组中删除  
+```
+精灵组：
+```
+__init__(self,*精灵)：
+add(*sprites):像组中增加精灵  
+sprites():返回所有精灵列表  
+update(*args):让组中所有精灵调用update方法  
+draw(surface):将组中所有精灵的image绘制到surface的rect位置  
+```
+从这一部分开始，将正式踏入面向对象编程  
+创建继承自pygame的精灵子类GameSprite  
+```
+class GameSprite(pygame.sprite.Sprite)#第一个sprite是模块的名称，第二个Sprite是类名称
+```
+注意：当开发时，某一个子类的父类不是object基类，要在初始化方法中调用父类的初始化方法  
+
+
 
 
 
