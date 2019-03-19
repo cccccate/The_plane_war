@@ -97,6 +97,22 @@ draw(surface):将组中所有精灵的image绘制到surface的rect位置
 class GameSprite(pygame.sprite.Sprite)#第一个sprite是模块的名称，第二个Sprite是类名称
 ```
 注意：当开发时，某一个子类的父类不是object基类，要在初始化方法中调用父类的初始化方法  
+import与from..import的区别：import调用方法时必须要用“模块名.方法”；from..import可以直接使用方法  
+
+### 实现飞机大战主游戏类  
+明确项目的文件和每个文件的职责，一共包括两个py文件，plane_main.py和plane_sprites.py  
+plane_main:封装主游戏类，启动游戏  
+plane_sprites:封装游戏中所有需要使用的精灵子类，提供游戏相关工具  
+注意：在开发时，建议不要用固定的数值，而应该使用常量，如果需要调整数值，则直接修改常量即可  
+常量的定义：命名时所有字母都使用大写，单词与单词之间使用下划线连接，常量定义的位置在import之后，class之前  
+```
+self.screen = pygame.display.set_mode((480, 700))
+```
+修改为
+```
+SCREEN_RECT = pygame.Rect(0, 0, 480, 700)
+self.screen = pygame.display.set_mode(SCREEN_RECT.size)
+```
 
 
 
